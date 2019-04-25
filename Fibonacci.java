@@ -5,7 +5,9 @@ public class Fibonacci{
         BigInteger a = BigInteger.ONE;
         BigInteger b = BigInteger.ZERO;
         BigInteger c = BigInteger.ZERO;
-        for(int i = 1; i <= num; i++){
+        if(num < 2)
+           return a;
+        for(int i = 1; i < num; i++){
             c = b.add(a);
             b = a;
             a = c;
@@ -13,10 +15,8 @@ public class Fibonacci{
         return c;
     }
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        while(scan.hasNextInt()){
-            int num = scan.nextInt();
-            System.out.println(Fibonacci.fo(num));
+        for(int i = 1; i <= 200; i++){
+            System.out.println("Fibonacci.of(" + i + ") == " + Fibonacci.of(i));
         }
     }
 }
